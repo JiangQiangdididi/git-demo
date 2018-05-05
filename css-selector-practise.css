@@ -1,0 +1,98 @@
+p{
+  color:red;
+}
+
+
+p.a:hover{
+  color:red;
+}
+p.a:active{
+  color:green;
+}
+p.a:focus{
+  color:blue;
+}
+
+p.a.c>span{
+  color:red;
+}
+
+p.a.c>span>span:first-child{
+  color:green;
+}
+p.a.c>span>span:nth-child(2){
+  color:blue;
+}
+
+a{
+  color:pink;
+}
+a:visited{
+  color:orange;
+}
+[href*="@"]{
+  color:blue;
+}
+[href^="tel:"]{
+  color:yellow;
+}
+[href$=".pdf"i]{
+  color:black;
+  font-size:30px;
+}
+
+div.a.ul>li:nth-child(n+4):nth-child(-n+7){
+  color:red;
+}
+
+div.b>ul>li:nth-child(-n+25){
+  color:red;
+}
+div.b>ul>li:nth-child(n+65){
+  color:green;
+}
+div.b>ul>li:nth-child(n+35):nth-child(-n+50){
+  color:blue;
+}
+
+div.prime>ul>li{
+  color:blue;
+}
+
+
+div.prime>ul>li:nth-child(-n+1)
+{
+  color:skyblue;
+}
+
+div.prime>ul>li:nth-child(2n+4)
+{
+  color:skyblue;
+}
+
+div.prime>ul>li:nth-child(3n+3):nth-child(n+4)
+{
+  color:skyblue;
+}
+
+div.prime>ul>li:nth-child(5n+5):nth-child(n+6)
+{
+  color:skyblue;
+}
+
+div.prime>ul>li:nth-child(7n+7):nth-child(n+8)
+{
+  color:skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
