@@ -23,10 +23,10 @@ var jiangqiangdididi={
   },
   difference:(array,...value)=>{
     var result=[];
-    var state=1;
+    var state=0;
     for(var i=0;i<array.length;i++){
       for(var s=0;s<value.length;s++){
-        if(value[s].indexOf(array[i])>0){
+        if(value[s].indexOf(array[i])>=0){
           state=1;
           break;
         }
