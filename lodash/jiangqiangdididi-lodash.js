@@ -8,7 +8,7 @@ var jiangqiangdididi={
   },
   compact:(array)=>{
     var result=[];
-     for(var i;i<array.length;i++){
+     for(var i=0;i<array.length;i++){
        if(array[i]){
         result[i].push(array[i]);
        }
