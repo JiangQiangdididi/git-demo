@@ -6,7 +6,7 @@ var jiangqiangdididi={
     }
     return newArray;
   },
-  compact:array=>{
+  compact:(array)=>{
     var result=[];
      for(var i;i<array.length;i++){
        if(array[i]){
