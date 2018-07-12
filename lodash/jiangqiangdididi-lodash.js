@@ -32,7 +32,7 @@ var jiangqiangdididi={
         }
       }
       if(state===0){
-        result.push(value[i]);
+        result.push(array[i]);
       }
       state=0;
     }
