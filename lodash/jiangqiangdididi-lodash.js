@@ -19,13 +19,14 @@ var jiangqiangdididi={
       for(var i=0;i<value.length;i++){
         array.push(value[i]);
       }
+      return array;
   },
   difference:(array,...value)=>{
     var result=[];
     var state=0;
     for(var i=0;i<array.length;i++){
       for(var s=0;s<value.length;s++){
-        if(value.indexOf(arrat[i])>0){
+        if(value.indexOf(array[i])>0){
           state=1;
           break;
         }
@@ -35,6 +36,7 @@ var jiangqiangdididi={
       }
       state=0;
     }
+    return result;
   }
 }
   
