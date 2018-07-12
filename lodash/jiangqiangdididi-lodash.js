@@ -10,7 +10,7 @@ var jiangqiangdididi={
     var result=[];
      for(var i=0;i<array.length;i++){
        if(array[i]){
-        result[i].push(array[i]);
+        result.push(array[i]);
        }
      }
      return result;
