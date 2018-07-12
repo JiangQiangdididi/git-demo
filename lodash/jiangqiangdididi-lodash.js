@@ -7,15 +7,13 @@ var jiangqiangdididi={
     return newArray;
   },
   compact:array=>{
-     var result= array.filter(arr=>
-      arr===false,
-      arr===NaN,
-      arr===0,
-      arr===null,
-      arr===undefined,
-      arr===""
-    )
-    return result;
+    var result=[];
+     for(var i;i<array.length;i++){
+       if(array[i]){
+        result[i].push(array[i]);
+       }
+     }
+     return result;
   }
 }
   
