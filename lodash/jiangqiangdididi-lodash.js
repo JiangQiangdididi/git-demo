@@ -37,6 +37,32 @@ var jiangqiangdididi={
       state=0;
     }
     return result;
+  },
+  /**
+   * 
+   */
+  differenceby:(array,...value,iteratee)=>{
+      var result;
+      for (let key in value) {
+        array.forEach(element => {
+          if(iteratee(value)!=iteratee(element)){
+
+          }
+        });
+        
+      }
+  },
+  drop:(array,n=1)=>{
+    for(var s=0;s<n;s++){
+      array.shift();
+    }
+    return array;
+  },
+  dropRight:(array,n=1)=>{
+    for(var s=0;s<n;s++){
+      array.pop();
+    }
+    return array;
   }
 }
   
