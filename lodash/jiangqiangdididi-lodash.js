@@ -70,28 +70,28 @@ var jiangqiangdididi={
     for(var i=start;i<end;i++){
       array[i]=value;
     }
+    return array;
   },
   /**
    * 用predicate过滤，从头查找符合条件的第一个索引
    */
   findIndex:function(array,predicate=this.identity,fromIndex=0){
-    var result=0;
     for (let index = fromIndex; index < array.length; index++) {
-      if(predicate)
-       return index;
+     if(predicate(array[index])) 
+      return index;
     }
     return -1;
+   
   },
     /**
    * 用predicate过滤，从头查找符合条件的最后一个一个索引
    */
   findLastIndex:function(array,predicate=this.identity,fromIndex=array.length){
-    var result=0;
-    for (let index = fromIndex; index > 0; index--) {
-      if(predicate)
+    for (let index = array.length-1; index >= 0; index--) {
+      if(predicate(array[index])) 
        return index;
-    }
-    return -1;
+     }
+     return -1;
   },
   property:function(propName){
       return function(obj){
