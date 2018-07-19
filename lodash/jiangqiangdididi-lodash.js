@@ -63,11 +63,36 @@ var jiangqiangdididi={
     })
     return array;
   },
+  /**
+   *使用一个值填充数组
+   */
+  fill:function(array,value,start=0,end=array.length){
+    for(var i=start;i<end;i++){
+      array[i]=value;
+    }
+  },
+  /**
+   * 用predicate过滤，查找符合条件的索引
+   */
+  findIndex:function(array,predicate=this.identity,fromIndex=0){
+    var result=0;
+    for (let index = fromIndex; index < array.length; index++) {
+      if(predicate)
+       return index;
+    }
+    return -1;
+  },
   property:function(propName){
       return function(obj){
         return obj.propName;
       }
   },
+  sum:function(ary){
+    return this.sumBy(ary,value=>value);
+  },  
+  /**
+   * 被迭代方法还没写
+   */
   sumBy:function(ary,iteratee){
     var result=0;
     for(var i=0;i<ary.length;i++){
@@ -75,9 +100,12 @@ var jiangqiangdididi={
     }
     return result;
   },  
-  sum:function(ary){
-    return this.sumBy(ary,value=>value);//sada 
-  },  
+  /**
+   * 基本工具类的实现
+   */
+  identity:function(value){
+      return value;
+  }
 }
   
  
