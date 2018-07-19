@@ -76,7 +76,7 @@ var jiangqiangdididi={
     return result;
   },  
   sum:function(ary){
-    return this.sumBy(ary,value=>value);
+    return this.sumBy(ary,value=>value);//sada 
   },  
 }
   
