@@ -93,6 +93,9 @@ var jiangqiangdididi={
      }
      return -1;
   },
+  head:function(array){
+     return array.length>0?array[0]:null;   
+  },
   property:function(propName){
       return function(obj){
         return obj.propName;
