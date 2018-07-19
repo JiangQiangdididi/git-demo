@@ -1,12 +1,12 @@
 var jiangqiangdididi={
-  chunk:(array,num=1)=>{
+  chunk:function(array,num=1){
     var newArray=[];
     for(var i=0;i<array.length;i+=num){
        newArray.push(array.slice(i,i+num));
     }
     return newArray;
   },
-  compact:(array)=>{
+  compact:function(array){
     var result=[];
      for(var i=0;i<array.length;i++){
        if(array[i]){
@@ -15,13 +15,13 @@ var jiangqiangdididi={
      }
      return result;
   },
-  concat:(array,...value)=>{
+  concat:function(array,...value){
       for(var i=0;i<value.length;i++){
         array.push(value[i]);
       }
       return array;
   },
-  difference:(array,...value)=>{
+  difference:function(array,...value){
     var result=[];
     var state=0;
     for(var i=0;i<array.length;i++){
@@ -41,29 +41,43 @@ var jiangqiangdididi={
   /**
    * 
    */
-  differenceby:(array,...value,iteratee)=>{
+  differenceby:function(array,[values],[iteratee=_.identity]){
       var result;
-      for (let key in value) {
-        array.forEach(element => {
-          if(iteratee(value)!=iteratee(element)){
-
-          }
-        });
-        
-      }
+      
   },
-  drop:(array,n=1)=>{
+  drop:function(array,n=1){
     for(var s=0;s<n;s++){
       array.shift();
     }
     return array;
   },
-  dropRight:(array,n=1)=>{
+  dropRight:function(array,n=1){
     for(var s=0;s<n;s++){
       array.pop();
     }
     return array;
-  }
+  },
+  dropRightWhile:function(array,select){
+    array.filter((x)=>{
+      return x
+    })
+    return array;
+  },
+  property:function(propName){
+      return function(obj){
+        return obj.propName;
+      }
+  },
+  sumBy:function(ary,iteratee){
+    var result=0;
+    for(var i=0;i<ary.length;i++){
+      result+=iteratee(ary[i]);
+    }
+    return result;
+  },  
+  sum:function(ary){
+    return this.sumBy(ary,value=>value);
+  },  
 }
   
  
