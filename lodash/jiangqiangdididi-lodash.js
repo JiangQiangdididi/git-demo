@@ -72,11 +72,22 @@ var jiangqiangdididi={
     }
   },
   /**
-   * 用predicate过滤，查找符合条件的索引
+   * 用predicate过滤，从头查找符合条件的第一个索引
    */
   findIndex:function(array,predicate=this.identity,fromIndex=0){
     var result=0;
     for (let index = fromIndex; index < array.length; index++) {
+      if(predicate)
+       return index;
+    }
+    return -1;
+  },
+    /**
+   * 用predicate过滤，从头查找符合条件的最后一个一个索引
+   */
+  findLastIndex:function(array,predicate=this.identity,fromIndex=array.length){
+    var result=0;
+    for (let index = fromIndex; index > 0; index--) {
       if(predicate)
        return index;
     }
