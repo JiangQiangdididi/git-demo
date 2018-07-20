@@ -133,6 +133,13 @@ var jiangqiangdididi={
     
     return buff;
   },
+  fromPairs:function(pairs){
+    var buff={};
+    for(var i=0;i<pairs.length;i++){
+      buff.pairs[i][0]=pairs[i][1]
+    }
+    return buff;
+  },
   property:function(propName){
       return function(obj){
         return obj.propName;
