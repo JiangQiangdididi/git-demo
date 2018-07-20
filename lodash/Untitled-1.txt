@@ -1,0 +1,10 @@
+function array2Tree(array,rootindex){
+  if(array[rootindex]==null) return;
+  node={
+    val:array[rootindex],
+    left:array2Tree[array,rootindex*2+1],
+    right:array2Tree[array,rootindex*2+2]
+  }
+  return node;
+
+}
