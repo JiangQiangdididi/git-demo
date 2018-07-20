@@ -93,18 +93,7 @@ var jiangqiangdididi={
      }
      return -1;
   },
-  indexOf:function(array,value,fromIndex=0){
-    var startIndex= fromIndex>=0?fromIndex:(array.length-1-fromIndex)
-    for(var i=startIndex;i<array.length;i++){
-      if(array[i]===value){
-        return i;
-      }
-    } 
-    return -1;
-  },
-  head:function(array){
-    return array[0];   
-  },
+
   flatten:function(array){
     return [].concat(...array);
   },
@@ -140,6 +129,20 @@ var jiangqiangdididi={
     }
     return buff;
   },
+  head:function(array){
+    return array[0];   
+  },
+  indexOf:function(array,value,fromIndex=0){
+    var startIndex= fromIndex>=0?fromIndex:(array.length-fromIndex)
+    if(startIndex<0)startIndex=0;
+    for(var i=startIndex;i<array.length;i++){
+      if(array[i]===value){
+        return i;
+      }
+    } 
+    return -1;
+  },
+
   property:function(propName){
       return function(obj){
         return obj.propName;
