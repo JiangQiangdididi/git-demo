@@ -106,18 +106,32 @@ var jiangqiangdididi={
     return array[0];   
   },
   flatten:function(array){
-    return [].concat(array);
+    return [].concat(...array);
   },
   flattenDeep:function(array){
     var buff=[];
-     for(var i=0;i<array.length;i++){
-       if(typeof(array[i]===object)){
-        flattenDeep(array[i]);
-       }else{
-        buff.shift(array[i]);
-       }
-     }
-     return buff;
+    for(var i=0;i<array.length;i++){
+      if(Array.isArray( array[i])){	
+       buff=buff.concat(flattenDeep(array[i]));
+      }else{ console.log(array[i]);
+       buff.push(array[i]);
+      }
+    }
+    return buff;
+  },
+  flattenDepth:function(array, depth=1){
+    var buff=[];
+    depth--;
+    for(var i=0;i<array.length;i++){
+      if(Array.isArray( array[i])){	
+        if(depth<0) return buff;
+        buff=buff.concat(flattenDeep(array[i]),depth);
+      }else{ console.log(array[i]);
+        buff.push(array[i]);
+      }
+    }
+    
+    return buff;
   },
   property:function(propName){
       return function(obj){
@@ -145,5 +159,3 @@ var jiangqiangdididi={
   }
 }
   
- 
-
