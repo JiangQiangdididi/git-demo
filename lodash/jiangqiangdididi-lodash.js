@@ -124,7 +124,7 @@ var jiangqiangdididi={
     depth--;
     for(var i=0;i<array.length;i++){
       if(Array.isArray( array[i])){	
-        if(depth<0) return buff;
+        if(depth<0) return array;
         buff=buff.concat(this.flattenDepth(array[i],depth));
       }else{ console.log(array[i]);
         buff.push(array[i]);
@@ -136,7 +136,7 @@ var jiangqiangdididi={
   fromPairs:function(pairs){
     var buff={};
     for(var i=0;i<pairs.length;i++){
-      buff.pairs[i][0]=pairs[i][1]
+      buff[pairs[i][0]]=pairs[i][1]
     }
     return buff;
   },
