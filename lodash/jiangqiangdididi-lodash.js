@@ -125,7 +125,7 @@ var jiangqiangdididi={
     for(var i=0;i<array.length;i++){
       if(Array.isArray( array[i])){	
         if(depth<0) return buff;
-        buff=buff.concat(this.flattenDeep(array[i]),depth);
+        buff=buff.concat(this.flattenDepth(array[i],depth));
       }else{ console.log(array[i]);
         buff.push(array[i]);
       }
