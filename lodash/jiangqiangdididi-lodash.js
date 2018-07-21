@@ -133,7 +133,7 @@ var jiangqiangdididi={
     return array[0];   
   },
   indexOf:function(array,value,fromIndex=0){
-    var startIndex= fromIndex>=0?fromIndex:(array.length-fromIndex)
+    var startIndex= fromIndex>=0?fromIndex:(array.length+fromIndex)
     if(startIndex<0)startIndex=0;
     for(var i=startIndex;i<array.length;i++){
       if(array[i]===value){
