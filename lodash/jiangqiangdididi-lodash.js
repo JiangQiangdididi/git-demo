@@ -142,7 +142,20 @@ var jiangqiangdididi={
     } 
     return -1;
   },
-
+  initial:function(array){
+    return array.pop();
+  },
+  intersection:function(...array){
+    var buff=[];
+    for(var s=0;s<array[0].length;s++){
+      for(var i=1;i<array.length;i++){
+        if(array[i].indexOf(array[0][s])){
+          buff.push(array[0][s]);
+        }
+      }
+    }
+   return buff;
+  },
   property:function(propName){
       return function(obj){
         return obj.propName;
